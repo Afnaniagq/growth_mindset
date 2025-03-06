@@ -1,7 +1,7 @@
 import streamlit as st
-import qrcode
 from io import BytesIO
 import time  # Import time for simulating processing
+import qrcode
 
 # Page Configuration
 st.set_page_config(page_title="QR Code Generator", layout="centered")
