@@ -76,7 +76,7 @@ st.write("Enter text or a URL to generate a QR code.")
 
 # Sidebar Input:
 st.sidebar.header("🛠️Customize Your QR Code")
-text = st.sidebar.text_input("Enter text or URL:", placeholder="Type here...")
+text = st.sidebar.text_input("Enter text or URL:", placeholder="Type here....")
 
 # QR Code Generater:
 if text:
@@ -108,7 +108,7 @@ if text:
         file_name="qrcode.png",
         mime="image/png"
     )
-    st.write("Hope  You  Enjoy  Using  This  App😊")
+    st.write("Hope you enjoy using this app! 😊")
 else:
     st.warning("🤖 Please enter some text to generate a QR code.")
 
