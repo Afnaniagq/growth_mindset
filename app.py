@@ -58,7 +58,7 @@ st.markdown("""
 # st.markdown('<p class="title">🔳 QR Code Generator</p>', unsafe_allow_html=True)
 # st.markdown('<p class="subtitle">Enter text or a URL to generate a QR code.</p>', unsafe_allow_html=True)
 
-# Create two columns
+# Create two columns :
 col1, col2 = st.columns([1, 6])  # Adjust width ratio as needed
 
 # Display the image in the first column
@@ -74,11 +74,11 @@ with col2:
 st.write("Enter text or a URL to generate a QR code.")
 
 
-# Sidebar Input
+# Sidebar Input:
 st.sidebar.header("🛠️Customize Your QR Code")
 text = st.sidebar.text_input("Enter text or URL:", placeholder="Type here...")
 
-# QR Code Generation
+# QR Code Generater:
 if text:
     with st.spinner("Generating QR Code..."):  # Show processing animation
         time.sleep(2)  # Simulating processing time
@@ -108,7 +108,7 @@ if text:
         file_name="qrcode.png",
         mime="image/png"
     )
-    st.write("Hope  You  Enjoy  Using   This   App😊")
+    st.write("Hope  You  Enjoy  Using  This  App😊")
 else:
     st.warning("🤖 Please enter some text to generate a QR code.")
 
