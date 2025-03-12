@@ -5,31 +5,63 @@ import qrcode
 
 # Page Configuration
 st.set_page_config(page_title="QR Code Generator", layout="centered")
-
-# Custom CSS for better styling
 st.markdown("""
     <style>
+        /* Background gradient */
         .stApp {
-            background-color:#EAEAEA;
+            background: linear-gradient(to right, #C599B6 , #FAD0C4);
             text-align: center;
         }
-        .title {
-            font-size: 36px;
-            font-weight: bold;
+
+        /* Title Styling */
+        h1 {
+            color: black !important;
             text-align: center;
-            color: white;
         }
-        .input-box {
-            text-align: center;
-            margin-top: 20px;
+
+        /* Info Box */
+        .stAlert {
+            background-color:rgba(28, 131, 225, 0.1) !important;
+            border-bottom-color rgb(0, 66, 128)
+            color: black !important;
+            border-radius: 5px;
+            padding: 1px;
         }
-        .warning {
-            background_color:white;
-            color:white;
-        
+
+        /* Input Box */
+        .stTextInput > div > div > input {
+            background-color: white !important;
+            color: black !important;
+            border-radius: 6px;
+            padding: 8px;
+         
+        }
+
+        /* Download Button */
+        .stDownloadButton > button {
+            background-color: #4CAF50 !important;
+            color: white !important;
+            border-radius: 7px !important;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        /* Fix for Mobile */
+        @media (max-width: 768px) {
+            .stApp {
+                 background: linear-gradient(to right, #C599B6 , #FAD0C4);
+            }
+            .stTextInput > div > div > input {
+                font-size: 18px;
+            }
+            .stDownloadButton > button {
+                font-size: 18px;
+                padding: 12px;
+            }
         }
     </style>
 """, unsafe_allow_html=True)
+
 
 # Title and Subtitle
 col1, col2 = st.columns([1,5])
