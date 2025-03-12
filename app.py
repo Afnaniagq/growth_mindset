@@ -58,6 +58,9 @@ st.markdown("""
                 font-size: 18px;
                 padding: 12px;
             }
+            .stInfoBox{
+                color: black;
+            }
         }
     </style>
 """, unsafe_allow_html=True)
