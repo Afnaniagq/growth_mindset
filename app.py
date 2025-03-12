@@ -6,39 +6,12 @@ import qrcode
 # Page Configuration
 st.set_page_config(page_title="QR Code Generator", layout="centered")
 
-st.markdown("""
-    <style>
-        [data-testid="stSidebar"] {
-            background-color: #E9E8E8;  /* Purple background */
-            color: black;  /* Text color */
-        }
-        [data-testid="stSidebar"] .stTextInput>div>div>input {
-            background-color: white; /* Input box background */
-            color: black; /* Input text color */
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-# Apply custom CSS for white warning box
-st.markdown("""
-    <style>
-        div.stAlert {
-            background-color: white !important;
-            color: black !important;
-            border: 1px solid #FFC107 !important; /* Keeps the warning look */
-            padding: 10px;
-            border-radius: 5px;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
-
-
 # Custom CSS for better styling
 st.markdown("""
     <style>
         .stApp {
             background: linear-gradient(to right, #E6D9A2, #8967B3);
+            text-align: center;
         }
         .title {
             font-size: 36px;
@@ -46,47 +19,43 @@ st.markdown("""
             text-align: center;
             color: white;
         }
-        .subtitle {
-            font-size: 20px;
+        .input-box {
             text-align: center;
-            color: white;
+            margin-top: 20px;
+        }
+        .warning {
+            background_color:white;
+            color:white;
+        
         }
     </style>
 """, unsafe_allow_html=True)
 
 # Title and Subtitle
-# st.markdown('<p class="title">🔳 QR Code Generator</p>', unsafe_allow_html=True)
-# st.markdown('<p class="subtitle">Enter text or a URL to generate a QR code.</p>', unsafe_allow_html=True)
-
-# Create two columns :
-col1, col2 = st.columns([1, 6])  # Adjust width ratio as needed
-
-# Display the image in the first column
+col1, col2 = st.columns([1,5])
 with col1:
     st.image("qr.png", width=100)
-
-# Display the title in the second column
 with col2:
 
     st.title("QR Code Generator")
 
    
-st.write("Enter text or a URL to generate a QR code.")
+st.info("🤖 Please enter some text to generate a QR code.")
+    # st.markdown('<p class="title">🔳 QR Code Generator</p>', unsafe_allow_html=True)
+    # st.markdown('<p class="subtitle">Enter text or a URL to generate a QR code.</p>', unsafe_allow_html=True)
 
+# Input Field
+text = st.text_input("", placeholder="Type here....")
 
-# Sidebar Input:
-st.sidebar.header("🛠️Customize Your QR Code")
-text = st.sidebar.text_input("Enter text or URL:", placeholder="Type here....")
-
-# QR Code Generater:
+# QR Code Generation
 if text:
     with st.spinner("Generating QR Code..."):  # Show processing animation
-        time.sleep(2)  # Simulating processing time
+        time.sleep(1.5)  # Simulating processing time
 
     qr = qrcode.QRCode(
         version=1,
         error_correction=qrcode.constants.ERROR_CORRECT_H,
-        box_size=10,
+        box_size=8.5,
         border=4,
     )
     qr.add_data(text)
@@ -108,9 +77,14 @@ if text:
         file_name="qrcode.png",
         mime="image/png"
     )
-    st.write("Hope you enjoy using this app! 😊")
+    st.success("✅ Your QR Code is ready!")
+    st.balloons()
 else:
-    st.warning("🤖 Please enter some text to generate a QR code.")
+   
+    st.markdown(
+        "<h4 style='text-align: center; color:  white; font-size:19px'>📝 Just one step away... Type something to see your QR Code!</h4>",
+        unsafe_allow_html=True
+    )
 
 
 
@@ -126,43 +100,6 @@ else:
 
 
 
-
-
-
-
-
-
-# import streamlit as st
-# import requests
-
-# Streamlit App Title
-# st.title("🍽️ Recipe Finder")
-# st.write("Enter an ingredient to find recipes!")
-
-# User Input
-# ingredient = st.text_input("Enter an ingredient (e.g., chicken, tomato):")
-
-# if ingredient:
-#     API_URL = f"https://www.themealdb.com/api/json/v1/1/filter.php?i={ingredient}"
-#     response = requests.get(API_URL)
-    
-#     if response.status_code == 200:
-#         data = response.json()
-#         meals = data.get("meals")
-
-#         if meals:
-#             for meal in meals:
-#                 st.subheader(meal["strMeal"])  
-#                 st.image(meal["strMealThumb"], width=300) 
-                
-                # Full Recipe Button
-    #             recipe_url = f"https://www.themealdb.com/meal/{meal['idMeal']}"
-    #             st.markdown(f"[👉 Full Recipe]({recipe_url})", unsafe_allow_html=True)
-                
-    #     else:
-    #         st.error("No recipes found. Try another ingredient.")
-    # else:
-    #     st.error("Failed to fetch recipes. Try again later.")
 
 
 
