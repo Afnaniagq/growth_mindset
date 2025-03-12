@@ -10,7 +10,7 @@ st.set_page_config(page_title="QR Code Generator", layout="centered")
 st.markdown("""
     <style>
         .stApp {
-            background: linear-gradient(to right, #E6D9A2, #8967B3);
+            background-color:#EAEAEA;
             text-align: center;
         }
         .title {
@@ -82,7 +82,7 @@ if text:
 else:
    
     st.markdown(
-        "<h4 style='text-align: center; color:  white; font-size:19px'>📝 Just one step away... Type something to see your QR Code!</h4>",
+        "<h4 style='text-align: center; color:  #8967B3; font-size:19px'>📝 Just one step away... Type something to see your QR Code!</h4>",
         unsafe_allow_html=True
     )
 
