@@ -9,21 +9,21 @@ st.markdown("""
     <style>
         /* Background gradient */
         .stApp {
-            background: linear-gradient(to right, #C599B6 , #FAD0C4);
+            background:#ADB2D4;
             text-align: center;
         }
-
-        /* Title Styling */
-        h1 {
+          /* Title Styling */
+        [data-testid="stMarkdownContainer"] h1 {
             color: black !important;
-            text-align: center;
-        }
-
+            text-align: center !important;
+            font-family: 'Poppins', sans-serif !important; /* Change this to your preferred font */
+            font-weight: bold !important;
+        }    
         /* Info Box */
         .stAlert {
             background-color:rgba(28, 131, 225, 0.1) !important;
             border-bottom-color rgb(0, 66, 128)
-            color: black !important;
+            color: #8967B3!important;
             border-radius: 5px;
             padding: 1px;
         }
@@ -59,22 +59,22 @@ st.markdown("""
                 padding: 12px;
             }
             .stInfoBox{
-                color: black;
+                color:#8967B3;
             }
+            
         }
     </style>
 """, unsafe_allow_html=True)
 
 
 # Title and Subtitle
-col1, col2 = st.columns([1,5])
+col1, col2 = st.columns([1,4])
 with col1:
     st.image("qr.png", width=100)
 with col2:
 
     st.title("QR Code Generator")
-
-   
+  
 st.info("🤖 Please enter some text to generate a QR code.")
     # st.markdown('<p class="title">🔳 QR Code Generator</p>', unsafe_allow_html=True)
     # st.markdown('<p class="subtitle">Enter text or a URL to generate a QR code.</p>', unsafe_allow_html=True)
@@ -85,7 +85,7 @@ text = st.text_input("", placeholder="Type here....")
 # QR Code Generation
 if text:
     with st.spinner("Generating QR Code..."):  # Show processing animation
-        time.sleep(1.5)  # Simulating processing time
+        time.sleep(1.2)  # Simulating processing time
 
     qr = qrcode.QRCode(
         version=1,
@@ -117,10 +117,10 @@ if text:
 else:
    
     st.markdown(
-        "<h4 style='text-align: center; color:  #8967B3; font-size:19px'>📝 Just one step away... Type something to see your QR Code!</h4>",
+        "<h4 style='text-align: center; color:  white; font-size:19px'>📝 Just one step away... Type something to see your QR Code!</h4>",
         unsafe_allow_html=True
     )
-
+    
 
 
 
