@@ -49,7 +49,7 @@ st.markdown("""
         /* Fix for Mobile */
         @media (max-width: 768px) {
             .stApp {
-                 background: linear-gradient(to right, #C599B6 , #FAD0C4);
+                background:#ADB2D4;
             }
             .stTextInput > div > div > input {
                 font-size: 18px;
@@ -58,8 +58,7 @@ st.markdown("""
                 font-size: 18px;
                 padding: 12px;
             }
-            .stInfoBox{
-                color:#8967B3;
+          
             }
             
         }
