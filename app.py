@@ -42,26 +42,11 @@ st.markdown("""
             background-color: #4CAF50 !important;
             color: white !important;
             border-radius: 7px !important;
-            padding: 10px;
-            font-size: 16px;
+            padding: 12px;
+            font-size: 18px;
         }
 
-        /* Fix for Mobile */
-        @media (max-width: 768px) {
-            .stApp {
-                background:#ADB2D4;
-            }
-            .stTextInput > div > div > input {
-                font-size: 18px;
-            }
-            .stDownloadButton > button {
-                font-size: 18px;
-                padding: 12px;
-            }
-          
-            }
-            
-        }
+      
     </style>
 """, unsafe_allow_html=True)
 
