@@ -22,7 +22,6 @@ st.markdown("""
         /* Info Box */
         .stAlert {
             background-color:rgba(28, 131, 225, 0.1) !important;
-            border-bottom-color rgb(0, 66, 128)
             color: #8967B3!important;
             border-radius: 5px;
             padding: 5px;
@@ -30,7 +29,7 @@ st.markdown("""
 
         /* Input Box */
         .stTextInput > div > div > input {
-            # background-color: #4CAF50 !important;
+            background-color:white !important;
             color: black !important;
             border-radius: 6px;
             padding: 8px;
