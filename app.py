@@ -9,7 +9,7 @@ st.markdown("""
     <style>
         /* Background gradient */
         .stApp {
-            background:#ADB2D4;
+        background: linear-gradient(to right, #feb47b , #9D44C0);
             text-align: center;
         }
           /* Title Styling */
@@ -25,12 +25,12 @@ st.markdown("""
             border-bottom-color rgb(0, 66, 128)
             color: #8967B3!important;
             border-radius: 5px;
-            padding: 1px;
+            padding: 5px;
         }
 
         /* Input Box */
         .stTextInput > div > div > input {
-            background-color: white !important;
+            # background-color: #4CAF50 !important;
             color: black !important;
             border-radius: 6px;
             padding: 8px;
@@ -101,7 +101,7 @@ if text:
 else:
    
     st.markdown(
-        "<h4 style='text-align: center; color:  white; font-size:19px'>📝 Just one step away... Type something to see your QR Code!</h4>",
+        "<h4 style='text-align: center; color::#ADB2D4 ; font-size:19px'>📝 Just one step away... Type something to see your QR Code!</h4>",
         unsafe_allow_html=True
     )
     
